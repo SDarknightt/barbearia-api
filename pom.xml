@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.csi</groupId>
-    <artifactId>avaliador-de-proejtos</artifactId>
+    <artifactId>barbearia-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Avaliador de Proejtos</name>
-    <description>Avaliador de Proejtos</description>
+    <name>Barbearia</name>
+    <description>Barbearia</description>
     <properties>
         <java.version>17</java.version>
     </properties>

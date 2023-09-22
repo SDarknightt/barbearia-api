@@ -1,8 +1,9 @@
 package br.csi.barbearia.controller;
 
 import br.csi.barbearia.model.barbearia.Barbearia;
-import br.csi.barbearia.model.projeto.Projeto;
+import br.csi.barbearia.model.funcionario.Cliente;
 import br.csi.barbearia.service.BarbeariaService;
+import br.csi.barbearia.service.ClienteService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -15,9 +16,12 @@ import java.util.List;
 @RequestMapping("/barbearia")
 public class BarbeariaController {
     private final BarbeariaService service;
+    private final ClienteService clienteService;
 
-    public BarbeariaController(BarbeariaService service) {
+
+    public BarbeariaController(BarbeariaService service, ClienteService clienteService) {
         this.service = service;
+        this.clienteService = clienteService;
     }
 
     @PostMapping("/print-json")
@@ -71,4 +75,11 @@ public class BarbeariaController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/clienteBarbearia/{barbeariaId}")
+    public ResponseEntity<List<Cliente>> listarClientesDaBarbearia(@PathVariable Long barbeariaId) {
+        List<Cliente> clientes = clienteService.findAllByBarbeariaId(barbeariaId);
+        return ResponseEntity.ok(clientes);
+    }
+
 }

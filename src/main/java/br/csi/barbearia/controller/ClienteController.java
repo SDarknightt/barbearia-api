@@ -19,11 +19,6 @@ public class ClienteController {
         this.service = service;
     }
 
-    @PostMapping("/print-json")
-    public void printJSon(@RequestBody String json) {
-        System.out.println(json);
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> cliente(@PathVariable Long id) {
         Cliente cliente = this.service.findById(id);

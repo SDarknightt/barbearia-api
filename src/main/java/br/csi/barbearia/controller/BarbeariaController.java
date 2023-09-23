@@ -71,7 +71,7 @@ public class BarbeariaController {
         }
     }
 
-    @GetMapping("/clienteBarbearia/{barbeariaId}")
+    @GetMapping("/clientes/{barbeariaId}")
     public ResponseEntity<List<Cliente>> listarClientesDaBarbearia(@PathVariable Long barbeariaId) {
         List<Cliente> clientes = clienteService.findAllByBarbeariaId(barbeariaId);
         return ResponseEntity.ok(clientes);

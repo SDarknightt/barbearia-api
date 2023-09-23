@@ -36,8 +36,4 @@ public class Barbearia {
     @Embedded
     private Endereco endereco;
 
-    @OneToOne
-    @JoinColumn(name = "usuarioid")
-    private Usuario usuario;
-
 }

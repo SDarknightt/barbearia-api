@@ -3,7 +3,6 @@ package br.csi.barbearia.service;
 import br.csi.barbearia.model.aluno.Aluno;
 import br.csi.barbearia.model.aluno.AlunoDTO;
 import br.csi.barbearia.model.aluno.AlunoRepository;
-import br.csi.barbearia.model.projeto.Projeto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,12 +37,6 @@ public class AlunoService {
     }
     public void excluir(Long id){
         this.repository.deleteById(id);
-    }
-
-    public String atribuirProjeto(Long idAluno, Projeto projeto){
-        Aluno aluno = this.repository.getReferenceById(idAluno);
-        aluno.setProjeto(projeto);
-       return "Projeto atribuído com sucesso";
     }
 
     public List<AlunoDTO> findByAlunosPorProjeto(int id){

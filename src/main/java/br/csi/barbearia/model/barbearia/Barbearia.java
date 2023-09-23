@@ -1,6 +1,7 @@
 package br.csi.barbearia.model.barbearia;
 
 import br.csi.barbearia.model.aluno.Endereco;
+import br.csi.barbearia.model.usuario.Usuario;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -28,17 +29,15 @@ public class Barbearia {
     private String cnpj;
 
     @Email(message = "Email inválido")
-    private String login;
-
-    @NotNull
-    private String senha;
-
-    private String permissao;
+    private String email;
 
     private String telefone;
 
     @Embedded
     private Endereco endereco;
 
+    @OneToOne
+    @JoinColumn(name = "usuarioid")
+    private Usuario usuario;
 
 }

@@ -1,9 +1,7 @@
 package br.csi.barbearia.service;
 
 import br.csi.barbearia.model.barbearia.Barbearia;
-import br.csi.barbearia.model.barbearia.BarbeariaDTO;
 import br.csi.barbearia.model.barbearia.BarbeariaRepository;
-import br.csi.barbearia.model.projeto.Projeto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +14,7 @@ public class BarbeariaService {
         this.repository = repository;
     }
 
-    public void salvar(Barbearia barbearia) {
+    public void cadastrar(Barbearia barbearia) {
         this.repository.save(barbearia);
     }
 

@@ -2,7 +2,6 @@ package br.csi.barbearia.controller;
 
 import br.csi.barbearia.model.aluno.Aluno;
 import br.csi.barbearia.model.aluno.AlunoDTO;
-import br.csi.barbearia.model.projeto.Projeto;
 import br.csi.barbearia.service.AlunoService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -66,12 +65,6 @@ public class AlunoController {
     public ResponseEntity deletar(@PathVariable Long id){
         this.service.excluir(id);
         return ResponseEntity.noContent().build();
-    }
-
-    @PutMapping("/{id}/atribuir-projeto")
-    @Transactional
-    public ResponseEntity vincularProjeto(@PathVariable Long id, @RequestBody Projeto projeto){
-        return ResponseEntity.ok(this.service.atribuirProjeto(id, projeto));
     }
 
     @GetMapping("/projeto/{id}")

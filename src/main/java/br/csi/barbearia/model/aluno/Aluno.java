@@ -1,7 +1,6 @@
 package br.csi.barbearia.model.aluno;
 
 
-import br.csi.barbearia.model.projeto.Projeto;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -26,8 +25,4 @@ public class Aluno {
     private String email;
     @Embedded
     private Endereco endereco;
-
-    @ManyToOne
-    @JoinColumn(name = "idprojeto")
-    private Projeto projeto;
 }

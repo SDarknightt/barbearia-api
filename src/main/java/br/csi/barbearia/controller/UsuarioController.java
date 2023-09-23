@@ -34,22 +34,4 @@ public class UsuarioController {
         return this.service.findAllUsuarios();
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

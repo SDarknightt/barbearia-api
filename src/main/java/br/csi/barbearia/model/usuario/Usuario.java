@@ -1,6 +1,8 @@
 package br.csi.barbearia.model.usuario;
 
+import br.csi.barbearia.model.barbearia.Barbearia;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,6 +20,7 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
+    @Email
     private String login;
     @NotNull
     private String senha;

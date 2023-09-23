@@ -24,9 +24,14 @@ public class UsuarioService {
     public DadosUsuario findUsuario(Long id)
     {
         Usuario usuario = this.repository.getReferenceById(id);
-        return  new DadosUsuario(usuario);
+        return new DadosUsuario(usuario);
     }
     public List<DadosUsuario> findAllUsuarios(){
         return this.repository.findAll().stream().map(DadosUsuario::new).toList();
     }
+//    public record DadosUsuario(Long id, String login, String permissao){
+//        public DadosUsuario(Usuario usuario){
+//            this(usuario.getId(), usuario.getLogin(), usuario.getPermissao());
+//        }
+//    }
 }

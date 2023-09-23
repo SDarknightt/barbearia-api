@@ -3,4 +3,4 @@ create table usuarios(
     login varchar(100) not null ,
     senha varchar(100) not null ,
     permissao varchar(20)
-);
+    );

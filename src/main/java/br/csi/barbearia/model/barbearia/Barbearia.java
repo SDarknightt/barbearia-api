@@ -4,6 +4,7 @@ import br.csi.barbearia.model.aluno.Endereco;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,14 +28,17 @@ public class Barbearia {
     private String cnpj;
 
     @Email(message = "Email inválido")
-    private String email;
+    private String login;
 
-    @NotBlank
+    @NotNull
     private String senha;
+
+    private String permissao;
 
     private String telefone;
 
     @Embedded
     private Endereco endereco;
+
 
 }

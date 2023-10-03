@@ -1,6 +1,7 @@
 package br.csi.barbearia.controller;
 
 import br.csi.barbearia.model.corte.Corte;
+import br.csi.barbearia.service.CorteService;
 import jakarta.transaction.Transactional;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package br.csi.barbearia.model.cortes;
+package br.csi.barbearia.model.corte;
 
 import br.csi.barbearia.model.barbearia.Barbearia;
 import jakarta.persistence.*;
@@ -9,12 +9,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "cortes")
+@Table(name = "corte")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cortes {
+public class Corte {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,7 +1,6 @@
 package br.csi.barbearia.model.cliente;
 
 import br.csi.barbearia.model.funcionario.Cliente;
-import br.csi.barbearia.model.funcionario.Funcionario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

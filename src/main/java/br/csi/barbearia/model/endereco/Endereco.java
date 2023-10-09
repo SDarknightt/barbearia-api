@@ -1,4 +1,4 @@
-package br.csi.barbearia.model.barbearia;
+package br.csi.barbearia.model.endereco;
 
 
 import jakarta.persistence.Embeddable;

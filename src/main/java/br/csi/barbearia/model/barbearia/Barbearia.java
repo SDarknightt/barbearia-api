@@ -1,11 +1,9 @@
 package br.csi.barbearia.model.barbearia;
 
-import br.csi.barbearia.model.aluno.Endereco;
-import br.csi.barbearia.model.usuario.Usuario;
+import br.csi.barbearia.model.endereco.Endereco;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

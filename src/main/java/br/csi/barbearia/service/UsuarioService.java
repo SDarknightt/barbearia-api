@@ -54,6 +54,10 @@ public class UsuarioService {
     public List<DadosUsuario> findAllUsuarios(){
         return this.repository.findAll().stream().map(DadosUsuario::new).toList();
     }
+
+    public List<Usuario> findFuncionariosByBarbeariaId(Long barbeariaId) {
+        return repository.findByBarbeariaIdAndPermissao(barbeariaId, "ROLE_FUNCIONARIO");
+    }
 //    public record DadosUsuario(Long id, String login, String permissao){
 //        public DadosUsuario(Usuario usuario){
 //            this(usuario.getId(), usuario.getLogin(), usuario.getPermissao());

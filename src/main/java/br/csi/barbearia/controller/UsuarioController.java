@@ -58,4 +58,9 @@ public class UsuarioController {
         }
     }
 
+    @GetMapping("/funcionarios/{barbeariaId}")
+    public List<Usuario> listarFuncionariosDaBarbearia(@PathVariable Long barbeariaId) {
+        return service.findFuncionariosByBarbeariaId(barbeariaId);
+    }
+
 }

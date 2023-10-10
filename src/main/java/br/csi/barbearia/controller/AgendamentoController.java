@@ -62,4 +62,10 @@ public class AgendamentoController {
             return ResponseEntity.notFound().build();
         }
     }
+    @GetMapping("barbearia/{barbeariaId}")
+    public ResponseEntity<List<Agendamento>> listarPorBarbearia(@PathVariable Long barbeariaId) {
+        List<Agendamento> agendamentos = this.service.listarPorBarbearia(barbeariaId);
+        return ResponseEntity.ok(agendamentos);
+    }
+
 }

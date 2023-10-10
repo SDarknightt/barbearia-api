@@ -30,4 +30,8 @@ public class AgendamentoService {
         }
         return false;
     }
+
+    public List<Agendamento> listarPorBarbearia(Long barbeariaId) {
+        return this.repository.findByBarbeariaId(barbeariaId);
+    }
 }

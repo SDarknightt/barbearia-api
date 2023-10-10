@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface AgendamentoRepository extends JpaRepository<Agendamento, Long> {
     public Agendamento getById(Long id);
     public Optional<Agendamento> findById(Long id);
-    List<Agendamento> findAllAgendamentosByBarbeariaId(Long barbeariaId);
+    List<Agendamento> findByBarbeariaId(Long barbeariaId);
 }

@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface CorteRepository extends JpaRepository<Corte, Long> {
     public Corte getById(Long id);
     public Optional<Corte> findById(Long id);
-    List<Corte> findAllByBarbeariaId(Long barbeariaId);
+    List<Corte> findAllByBarbeariaId(Long barbeariaId);;
 }

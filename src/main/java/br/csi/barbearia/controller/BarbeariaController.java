@@ -25,15 +25,15 @@ public class BarbeariaController {
         this.clienteService = clienteService;
     }
 
-//    @GetMapping("/{id}")
-//    public ResponseEntity<Barbearia> barbearia(@PathVariable Long id) {
-//        Barbearia barbearia = this.service.findById(id);
-//        if (barbearia != null) {
-//            return ResponseEntity.ok(barbearia);
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Barbearia> barbearia(@PathVariable Long id) {
+        Barbearia barbearia = this.service.findById(id);
+        if (barbearia != null) {
+            return ResponseEntity.ok(barbearia);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     @PostMapping
     @Transactional

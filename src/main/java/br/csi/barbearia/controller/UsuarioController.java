@@ -27,11 +27,18 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}")
-    public DadosUsuario findById(@PathVariable Long id){return this.service.findUsuario(id);}
+    public DadosUsuario findById(@PathVariable Long id){
+        return this.service.findUsuario(id);}
 
     @GetMapping
     public List<DadosUsuario> findAll(){
         return this.service.findAllUsuarios();
+    }
+
+
+    @GetMapping("/funcionarios/{barbeariaId}")
+    public List<Usuario> listarFuncionariosDaBarbearia(@PathVariable Long barbeariaId) {
+        return service.findFuncionariosByBarbeariaId(barbeariaId);
     }
 
 }

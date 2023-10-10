@@ -23,12 +23,17 @@ public class UsuarioService {
     }
     public DadosUsuario findUsuario(Long id)
     {
-        Usuario usuario = this.repository.getReferenceById(id);
+        Usuario usuario = this.repository.findById(id.longValue());
         return new DadosUsuario(usuario);
     }
     public List<DadosUsuario> findAllUsuarios(){
         return this.repository.findAll().stream().map(DadosUsuario::new).toList();
     }
+
+    public List<Usuario> findFuncionariosByBarbeariaId(Long barbeariaId) {
+        return repository.findByBarbeariaIdAndPermissao(barbeariaId, "ROLE_FUNCIONARIO");
+    }
+
 //    public record DadosUsuario(Long id, String login, String permissao){
 //        public DadosUsuario(Usuario usuario){
 //            this(usuario.getId(), usuario.getLogin(), usuario.getPermissao());

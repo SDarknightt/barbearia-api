@@ -1,7 +1,7 @@
 package br.csi.barbearia.controller;
 
 import br.csi.barbearia.model.barbearia.Barbearia;
-import br.csi.barbearia.model.funcionario.Cliente;
+import br.csi.barbearia.model.cliente.Cliente;
 import br.csi.barbearia.service.BarbeariaService;
 import br.csi.barbearia.service.ClienteService;
 import jakarta.validation.Valid;
@@ -25,15 +25,15 @@ public class BarbeariaController {
         this.clienteService = clienteService;
     }
 
-//    @GetMapping("/{id}")
-//    public ResponseEntity<Barbearia> barbearia(@PathVariable Long id) {
-//        Barbearia barbearia = this.service.findById(id);
-//        if (barbearia != null) {
-//            return ResponseEntity.ok(barbearia);
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Barbearia> barbearia(@PathVariable Long id) {
+        Barbearia barbearia = this.service.findById(id);
+        if (barbearia != null) {
+            return ResponseEntity.ok(barbearia);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     @PostMapping
     @Transactional

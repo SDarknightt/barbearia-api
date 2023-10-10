@@ -1,7 +1,7 @@
 package br.csi.barbearia.service;
 
+import br.csi.barbearia.model.cliente.Cliente;
 import br.csi.barbearia.model.cliente.ClienteRepository;
-import br.csi.barbearia.model.funcionario.Cliente;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

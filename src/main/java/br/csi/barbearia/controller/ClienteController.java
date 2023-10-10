@@ -1,6 +1,6 @@
 package br.csi.barbearia.controller;
 
-import br.csi.barbearia.model.funcionario.Cliente;
+import br.csi.barbearia.model.cliente.Cliente;
 import br.csi.barbearia.service.ClienteService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;

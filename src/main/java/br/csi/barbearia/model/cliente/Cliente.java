@@ -1,4 +1,4 @@
-package br.csi.barbearia.model.funcionario;
+package br.csi.barbearia.model.cliente;
 
 import br.csi.barbearia.model.barbearia.Barbearia;
 import jakarta.persistence.*;

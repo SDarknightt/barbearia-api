@@ -65,4 +65,12 @@ public class ClienteController {
             return ResponseEntity.notFound().build();
         }
     }
+
+
+    @GetMapping("/barbearia/{barbeariaId}")
+    public ResponseEntity<List<Cliente>> listarClientesPorBarbearia(@PathVariable Long barbeariaId) {
+        List<Cliente> clientes = this.service.listarClientesPorBarbearia(barbeariaId);
+        return ResponseEntity.ok(clientes);
+    }
+
 }

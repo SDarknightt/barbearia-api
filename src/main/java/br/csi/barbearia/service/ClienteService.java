@@ -48,4 +48,10 @@ public class ClienteService {
     public List<Cliente> findAllByBarbeariaId(Long barbeariaId) {
         return repository.findAllClientesByBarbeariaId(barbeariaId);
     }
+
+    public List<Cliente> listarClientesPorBarbearia(Long barbeariaId) {
+        // Implemente a lógica para buscar os clientes com base no ID da barbearia
+        return repository.findByBarbeariaId(barbeariaId);
+    }
+
 }

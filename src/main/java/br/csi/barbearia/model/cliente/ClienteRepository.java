@@ -12,4 +12,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     public Optional<Cliente> findById(Long id);
     List<Cliente> findAllClientesByBarbeariaId(Long barbeariaId);
 
+    List<Cliente> findByBarbeariaId(Long barbeariaId);
+
 }

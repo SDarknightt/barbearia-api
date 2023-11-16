@@ -13,7 +13,10 @@ public class CorteService {
     public CorteService(CorteRepository repository){this.repository = repository;}
 
     public void salvar(Corte corte){this.repository.save(corte);}
-    public List<Corte> listar(){return this.repository.findAll();}
+    public List<Corte> list(){return this.repository.findAll();}
+    public List<Corte> listByBarbearia(Long barbeariaId) {
+        return this.repository.findAllByBarbeariaId(barbeariaId);
+    }
     public Corte findById(Long id){return this.repository.findById(id).orElse(null);}
     public void atualizar(Corte corte){
         Corte c = this.repository.findById(corte.getId()).orElse(null);

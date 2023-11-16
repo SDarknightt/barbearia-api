@@ -34,10 +34,15 @@ public class CorteController {
         return ResponseEntity.created(uri).body(corte);
     }
 
-    @GetMapping
-    public ResponseEntity<List<Corte>> listar(){
-        List<Corte> cortes = this.service.listar();
+    @GetMapping("/cortes")
+    public ResponseEntity<List<Corte>> list(){
+        List<Corte> cortes = this.service.list();
         return ResponseEntity.ok(cortes);
+    }
+
+    @GetMapping("/barbearia/{barbeariaId}")
+    public List<Corte> getCortesByBarbeariaId(@PathVariable Long barbeariaId) {
+        return service.listByBarbearia(barbeariaId);
     }
 
     @PutMapping("/{id}")

@@ -12,6 +12,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
 
 
 @Entity
@@ -42,4 +43,8 @@ public class Agendamento {
     @ManyToOne
     @JoinColumn(name = "corteid")
     private Corte corte;
+
+    @Temporal(TemporalType.TIMESTAMP) // Use TemporalType.DATE se precisar apenas da data
+    @Column(name = "datacorte")
+    private Date datacorte;
 }

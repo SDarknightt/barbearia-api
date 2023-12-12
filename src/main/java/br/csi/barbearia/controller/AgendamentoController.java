@@ -1,5 +1,6 @@
 package br.csi.barbearia.controller;
 
+import br.csi.barbearia.dto.AgendamentosBarbeariaDTO;
 import br.csi.barbearia.model.agendamento.Agendamento;
 import br.csi.barbearia.service.AgendamentoService;
 import org.springframework.http.ResponseEntity;
@@ -63,8 +64,8 @@ public class AgendamentoController {
         }
     }
     @GetMapping("barbearia/{barbeariaId}")
-    public ResponseEntity<List<Agendamento>> listarPorBarbearia(@PathVariable Long barbeariaId) {
-        List<Agendamento> agendamentos = this.service.listarPorBarbearia(barbeariaId);
+    public ResponseEntity<List<AgendamentosBarbeariaDTO>> listarPorBarbearia(@PathVariable Long barbeariaId) {
+        List<AgendamentosBarbeariaDTO> agendamentos = this.service.listarPorBarbearia(barbeariaId);
         return ResponseEntity.ok(agendamentos);
     }
 

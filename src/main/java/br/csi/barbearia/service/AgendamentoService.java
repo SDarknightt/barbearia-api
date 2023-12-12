@@ -1,5 +1,6 @@
 package br.csi.barbearia.service;
 
+import br.csi.barbearia.dto.AgendamentosBarbeariaDTO;
 import br.csi.barbearia.model.agendamento.Agendamento;
 import br.csi.barbearia.model.agendamento.AgendamentoRepository;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ public class AgendamentoService {
         return false;
     }
 
-    public List<Agendamento> listarPorBarbearia(Long barbeariaId) {
+    public List<AgendamentosBarbeariaDTO> listarPorBarbearia(Long barbeariaId) {
         return this.repository.findByBarbeariaId(barbeariaId);
     }
 }

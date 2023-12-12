@@ -1,5 +1,6 @@
 package br.csi.barbearia.controller;
 
+import br.csi.barbearia.dto.CorteDTO;
 import br.csi.barbearia.model.corte.Corte;
 import br.csi.barbearia.service.CorteService;
 import jakarta.transaction.Transactional;
@@ -41,7 +42,7 @@ public class CorteController {
     }
 
     @GetMapping("/barbearia/{barbeariaId}")
-    public List<Corte> getCortesByBarbeariaId(@PathVariable Long barbeariaId) {
+    public List<CorteDTO> getCortesByBarbeariaId(@PathVariable Long barbeariaId) {
         return service.listByBarbearia(barbeariaId);
     }
 

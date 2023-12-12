@@ -1,5 +1,6 @@
 package br.csi.barbearia.controller;
 
+import br.csi.barbearia.dto.ClienteDTO;
 import br.csi.barbearia.model.barbearia.Barbearia;
 import br.csi.barbearia.model.cliente.Cliente;
 import br.csi.barbearia.service.BarbeariaService;
@@ -72,8 +73,8 @@ public class BarbeariaController {
     }
 
     @GetMapping("/clientes/{barbeariaId}")
-    public ResponseEntity<List<Cliente>> listarClientesDaBarbearia(@PathVariable Long barbeariaId) {
-        List<Cliente> clientes = clienteService.findAllByBarbeariaId(barbeariaId);
+    public ResponseEntity<List<ClienteDTO>> listarClientesDaBarbearia(@PathVariable Long barbeariaId) {
+        List<ClienteDTO> clientes = clienteService.findAllByBarbeariaId(barbeariaId);
         return ResponseEntity.ok(clientes);
     }
 

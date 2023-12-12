@@ -1,7 +1,7 @@
 package br.csi.barbearia.controller;
 
-import br.csi.barbearia.model.corte.Corte;
-import br.csi.barbearia.model.usuario.DadosUsuario;
+import br.csi.barbearia.dto.DadosUsuarioDTO;
+import br.csi.barbearia.dto.FuncionarioDTO;
 import br.csi.barbearia.model.usuario.Usuario;
 import br.csi.barbearia.service.UsuarioService;
 import jakarta.transaction.Transactional;
@@ -28,7 +28,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}")
-    public DadosUsuario findById(@PathVariable Long id){return this.service.findUsuario(id);}
+    public DadosUsuarioDTO findById(@PathVariable Long id){return this.service.findUsuario(id);}
 
     @PutMapping("/{id}")
     @org.springframework.transaction.annotation.Transactional
@@ -44,7 +44,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/usuarios")
-    public List<DadosUsuario> findAll(){
+    public List<DadosUsuarioDTO> findAll(){
         return this.service.findAllUsuarios();
     }
 
@@ -59,7 +59,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/funcionarios/{barbeariaId}")
-    public List<Usuario> listarFuncionariosDaBarbearia(@PathVariable Long barbeariaId) {
+    public List<FuncionarioDTO> listarFuncionariosDaBarbearia(@PathVariable Long barbeariaId) {
         return service.findFuncionariosByBarbeariaId(barbeariaId);
     }
 

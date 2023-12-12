@@ -1,5 +1,7 @@
 package br.csi.barbearia.controller;
 
+import br.csi.barbearia.dto.ClienteBarbeariaDTO;
+import br.csi.barbearia.dto.ClienteDTO;
 import br.csi.barbearia.model.cliente.Cliente;
 import br.csi.barbearia.service.ClienteService;
 import org.springframework.http.ResponseEntity;
@@ -68,8 +70,8 @@ public class ClienteController {
 
 
     @GetMapping("/barbearia/{barbeariaId}")
-    public ResponseEntity<List<Cliente>> listarClientesPorBarbearia(@PathVariable Long barbeariaId) {
-        List<Cliente> clientes = this.service.listarClientesPorBarbearia(barbeariaId);
+    public ResponseEntity<List<ClienteBarbeariaDTO>> listarClientesPorBarbearia(@PathVariable Long barbeariaId) {
+        List<ClienteBarbeariaDTO> clientes = this.service.listarClientesPorBarbearia(barbeariaId);
         return ResponseEntity.ok(clientes);
     }
 

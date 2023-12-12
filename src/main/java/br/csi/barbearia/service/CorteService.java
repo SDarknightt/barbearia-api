@@ -1,5 +1,6 @@
 package br.csi.barbearia.service;
 
+import br.csi.barbearia.dto.CorteDTO;
 import br.csi.barbearia.model.corte.Corte;
 import br.csi.barbearia.model.corte.CorteRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class CorteService {
 
     public void salvar(Corte corte){this.repository.save(corte);}
     public List<Corte> list(){return this.repository.findAll();}
-    public List<Corte> listByBarbearia(Long barbeariaId) {
+    public List<CorteDTO> listByBarbearia(Long barbeariaId) {
         return this.repository.findAllByBarbeariaId(barbeariaId);
     }
     public Corte findById(Long id){return this.repository.findById(id).orElse(null);}

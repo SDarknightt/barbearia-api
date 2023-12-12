@@ -1,5 +1,7 @@
 package br.csi.barbearia.model.cliente;
 
+import br.csi.barbearia.dto.ClienteBarbeariaDTO;
+import br.csi.barbearia.dto.ClienteDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -9,8 +11,8 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     public Cliente getById(Long id);
     public Optional<Cliente> findById(Long id);
-    List<Cliente> findAllClientesByBarbeariaId(Long barbeariaId);
+    List<ClienteDTO> findAllClientesByBarbeariaId(Long barbeariaId);
 
-    List<Cliente> findByBarbeariaId(Long barbeariaId);
+    List<ClienteBarbeariaDTO> findByBarbeariaId(Long barbeariaId);
 
 }

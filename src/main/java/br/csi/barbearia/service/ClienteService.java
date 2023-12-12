@@ -1,5 +1,7 @@
 package br.csi.barbearia.service;
 
+import br.csi.barbearia.dto.ClienteBarbeariaDTO;
+import br.csi.barbearia.dto.ClienteDTO;
 import br.csi.barbearia.model.cliente.Cliente;
 import br.csi.barbearia.model.cliente.ClienteRepository;
 import org.springframework.stereotype.Service;
@@ -45,12 +47,11 @@ public class ClienteService {
         return false;
     }
 
-    public List<Cliente> findAllByBarbeariaId(Long barbeariaId) {
+    public List<ClienteDTO> findAllByBarbeariaId(Long barbeariaId) {
         return repository.findAllClientesByBarbeariaId(barbeariaId);
     }
 
-    public List<Cliente> listarClientesPorBarbearia(Long barbeariaId) {
-        // Implemente a lógica para buscar os clientes com base no ID da barbearia
+    public List<ClienteBarbeariaDTO> listarClientesPorBarbearia(Long barbeariaId) {
         return repository.findByBarbeariaId(barbeariaId);
     }
 

@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "corte")
 @Getter
@@ -22,6 +24,8 @@ public class Corte {
     private String nome;
     @NotBlank
     private String descricao;
+    @NotBlank
+    private BigDecimal preco;
 
     @ManyToOne
     @JoinColumn(name = "barbeariaid")

@@ -1,7 +1,7 @@
 package br.csi.barbearia.service;
 
-import br.csi.barbearia.model.corte.Corte;
-import br.csi.barbearia.model.usuario.DadosUsuario;
+import br.csi.barbearia.dto.DadosUsuarioDTO;
+import br.csi.barbearia.dto.FuncionarioDTO;
 import br.csi.barbearia.model.usuario.Usuario;
 import br.csi.barbearia.model.usuario.UsuarioRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -23,10 +23,10 @@ public class UsuarioService {
         this.repository.save(usuario);
     }
     public Usuario findById(Long id){return this.repository.findById(id).orElse(null);}
-    public DadosUsuario findUsuario(Long id)
+    public DadosUsuarioDTO findUsuario(Long id)
     {
         Usuario usuario = this.repository.getReferenceById(id);
-        return new DadosUsuario(usuario);
+        return new DadosUsuarioDTO(usuario);
     }
 
     public void atualizar(Usuario usuario){
@@ -51,11 +51,11 @@ public class UsuarioService {
         }
         return false;
     }
-    public List<DadosUsuario> findAllUsuarios(){
-        return this.repository.findAll().stream().map(DadosUsuario::new).toList();
+    public List<DadosUsuarioDTO> findAllUsuarios(){
+        return this.repository.findAll().stream().map(DadosUsuarioDTO::new).toList();
     }
 
-    public List<Usuario> findFuncionariosByBarbeariaId(Long barbeariaId) {
+    public List<FuncionarioDTO> findFuncionariosByBarbeariaId(Long barbeariaId) {
         return repository.findByBarbeariaIdAndPermissao(barbeariaId, "ROLE_FUNCIONARIO");
     }
 //    public record DadosUsuario(Long id, String login, String permissao){
